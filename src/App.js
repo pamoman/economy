@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
-import Header from './components/header/Header.js';
-import Footer from './components/footer/Footer.js';
-import Register from './components/auth/Register.js';
-import Login from './components/auth/Login.js';
-import Forgot from './components/auth/Forgot.js';
-import Reset from './components/auth/Reset.js';
+// Page components
+import Header from 'components/header/Header.js';
+import Footer from 'components/footer/Footer.js';
+import Bills from 'components/Bills/Bills.js';
+
+// Auth components
+import Register from 'components/auth/Register.js';
+import Login from 'components/auth/Login.js';
+import Forgot from 'components/auth/Forgot.js';
+import Reset from 'components/auth/Reset.js';
 import PublicRoute from './PublicRoute.js';
 import PrivateRoute from './PrivateRoute.js';
 import AdminRoute from './AdminRoute.js';
-import { AuthContext, AdminContext, getAuth, isAdmin } from "./components/auth/auth.js";
+import { AuthContext, AdminContext, getAuth, isAdmin } from "components/auth/auth.js";
 import './App.css';
 
 class App extends Component {
@@ -19,8 +23,8 @@ class App extends Component {
         this.authStatus = this.authStatus.bind(this);
         this.setAuth = this.setAuth.bind(this);
         this.state = {
-            isAuth: true,
-            isAdmin: true
+            isAuth: null,
+            isAdmin: null
         };
         this.saveState = (page, state) => {
             this.setState({
@@ -33,7 +37,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        // this.authStatus();
+        this.authStatus();
     }
 
     authStatus() {
@@ -67,6 +71,7 @@ class App extends Component {
                             <Header />
                             <div className="page-wrapper">
                                 <Switch>
+                                    <PrivateRoute exact path="/" component={Bills} />
                                     <PublicRoute exact path="/register" component={Register} />
                                     <PublicRoute exact path="/login" component={Login} />
                                     <PublicRoute exact path="/forgot" component={Forgot} />

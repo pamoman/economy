@@ -2,9 +2,9 @@
 
 import React, { Component } from 'react';
 import  { withRouter } from 'react-router-dom';
-import db from '../../models/db.js';
-import utils from '../../models/utils.js';
-import { AuthContext } from "../auth/auth.js";
+import db from 'models/db.js';
+import utils from 'models/utils.js';
+import { AuthContext } from "components/auth/auth.js";
 
 class Login extends Component {
     static contextType = AuthContext;

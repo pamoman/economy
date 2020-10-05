@@ -1,4 +1,4 @@
-import base from '../config/api.js';
+import base from 'config/api.js';
 const api = base.api();
 
 // Database helper
@@ -116,7 +116,7 @@ const db = {
     },
     fetchAllWhere: async function(table, column, value) {
         try {
-            let res = await fetch(`${api}/${table}/view/${column}/${value}`);
+            let res = await fetch(`${api}/${table}/${column}/${value}`);
 
             return await res.json();
         } catch(err) {

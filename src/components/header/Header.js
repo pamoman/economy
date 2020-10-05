@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AuthContext } from "../auth/auth.js";
-import Navbar from '../navbar/Navbar.js';
+import { AuthContext } from "components/auth/auth.js";
+import Navbar from 'components/navbar/Navbar.js';
 import './Header.css';
 
 class Header extends Component {
@@ -11,7 +11,7 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "DLG Klassrum"
+            title: "Economy"
         };
     }
 

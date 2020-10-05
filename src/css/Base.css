@@ -143,7 +143,8 @@ main {
 }
 
 aside,
-article {
+article,
+section {
     padding-top: 2rem;
     padding-bottom: 2rem;
     margin-bottom: 2rem;
@@ -154,7 +155,8 @@ aside,
     padding-left: 2rem;
 }
 
-article {
+article,
+section {
     width: 100%;
     padding-left: 2rem;
     padding-right: 2rem;
